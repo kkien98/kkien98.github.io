@@ -1,0 +1,19 @@
+#login-screen{
+    background: url("../img/background.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #login-card{
+    background: #ffffff7e;
+    padding: 50px;
+    box-shadow: 0 4px 8px 0 rgba(15, 255, 163, 0.705), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+  
+}
+
+#login-card:hover{
+    background: #ffffff;
+} */
