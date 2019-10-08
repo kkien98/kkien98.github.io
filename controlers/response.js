@@ -8,6 +8,8 @@ const responseCode = {
         register_success: "auth/register_success",
         email_not_verified: "auth/email_not_verified",
         login_success: "auth/login_success",
+        wrong_password:"auth/wrong-password",
+        user_not_found:"auth/user-not-found"
     }
 }
 

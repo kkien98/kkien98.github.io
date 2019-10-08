@@ -6,15 +6,15 @@ import user from "../models/user.js"
 
 let lastMsgEmail="";
 const ui = `
-<div class="flex-container height-100">
-<div class="element grow-1 border-right">
-<div id="js-conversationHeader">
+<div class="flex-container height-100 background ">
+<div id="left-side" class="element grow-1 border-right  vertical-scroll">
+<div id="js-conversationHeader" class="js-conversationHeader">
 </div>
-<div id="js-conFrame">
+<div id="js-conFrame" class="height-100 element">
 
 </div>
 </div>
-<div class="flex-container flex-column grow-3">
+<div id="right-side" class="flex-container flex-column grow-3">
 <div class="element">
 <h4 class="bg-gray">Title</h4>
 </div>
@@ -35,7 +35,7 @@ const ui = `
 </form>
 </div>
 </div>
-<div class="element grow-1 border-left">
+<div class="element grow-1 border-left js-listUserFrame">
 <div id="js-listUserFrame">
 </div>
 <div>
@@ -49,23 +49,24 @@ const ui = `
 </div>
     `;
 const formCreateHTML = `
-<form id="js-formCreate">
+<form id="js-formCreate" class="align-center">
   <div class="input-group">
-  <label>Name</label>
-  <input id="js-conName" type="text" class="width-100">
+  <label>Name Conversation</label>
+  <input id="js-conName" type="text" class="width-90">
   </div>
   <div class="input-group">
-  <label>Email</label>
-  <input id="js-conEmail" type="text" class="width-100">
+  <label>Add People(email)</label>
+  <input id="js-conEmail" type="text" class="width-90">
   </div>
   <div class="input-group">
-  <button class="btn width-100">Create</button>
+  <button class="btn">Create</button>
+  <button class="btn" onclick=closeFormCreate()>Close</button>
   </div>
 </form>
 `
 
 const btnShowHTML = `
-<button class="btn-createdCon width-100" id="js-btnShow" class="width-100">Create new conversation</button>
+<button class="btn-createdCon width-100" id="js-btnShow" >Create new conversation</button>
 `
 function onLoad() {
     // subscribe(chatScreen);
@@ -75,6 +76,7 @@ function onLoad() {
     const conFrame = document.getElementById("js-conFrame")
     //click để switch giữa các conversation
     conFrame.addEventListener("click", function (event) {
+        console.log(event.target.id);
         chatController.changeActiveCon(event.target.id);
     })
     formChat.addEventListener("submit", function (event) {
@@ -91,6 +93,7 @@ function onLoad() {
     formAddUser.addEventListener("submit", function (event) {
         event.preventDefault();
         chatController.addUser(formAddUser["js-inputAddUser"].value);
+        formAddUser["js-inputAddUser"].value="";
     })
     addBtnShow();
     listenConversation();
@@ -106,6 +109,12 @@ function addBtnShow() {
         addFormCreate();
     })
 
+}
+function closeFormCreate(){
+    const conHeader = document.getElementById("js-conversationHeader");
+    conHeader.innerHTML= `
+    <button class="btn-createdCon width-100" id="js-btnShow" class="width-100">Create new conversation</button>
+    `
 }
 
 

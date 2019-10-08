@@ -23,6 +23,7 @@ const authController = {
 
   login: async function(request)
   {
+    
     const loginResult= await firebase.auth().signInWithEmailAndPassword(request.email,request.password);
     if(!loginResult.user.emailVerified)
     //if(loginResult.user.emailVerified == false)

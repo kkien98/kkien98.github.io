@@ -10,19 +10,19 @@ const screen = `
 <h4 class="align-center">Join Us</h4>
     <div class="input-group">
         <label>Name</label>
-        <input id="name" type="text">
+        <input id="name" type="text" class="reg-input">
         </div>
         <div class="input-group">
         <label>Email</label>
-        <input id="email" type="email">
+        <input id="email" type="email" class="reg-input">
         </div>
         <div class="input-group">
         <label>Password</label>
-        <input id="password" type="password">
+        <input id="password" type="password" class="reg-input">
         </div>
         <div class="input-group">
         <label>Confirm Password</label>
-        <input id="retypePassword" type="password">
+        <input id="retypePassword" type="password" class="reg-input">
         </div>
         <div class="input-group">
         <button class="btn" type="submit">Register</button>
@@ -50,7 +50,8 @@ function onLoad()
   switch(response.code)
   {
     case responseCode.auth.register_success :   //code của trường hợp success trong response.js
-        alert("Registered successfully, Login to enjoy!");
+        alert("Registered successfully,please check your E-mail to verify");
+        setScreen(loginScreen);
         return;
   }
  });

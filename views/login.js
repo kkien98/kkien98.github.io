@@ -5,20 +5,20 @@ import {responseCode} from '../controlers/response.js'
 import chatScreen from '../views/chat.js'
 const form =`
 <div id="login-screen" class="width-100 height-100">
-<div class="card">
+<div class="card card-sm">
 <form id="js-loginForm">
-<h4 class="align-center">MindX Chat<h4>
-        <div class="input-group">
+<h3 class="align-center">Just Chat</h3>
+        <div class="input-group ">
         <label>Email</label>
-        <input id="email" type="email">
+        <input id="email" type="email" >
         </div>
         <div class="input-group">
         <label>Password</label>
         <input id="password" type="password">
         </div>
         <div class="input-group">
-        <button class="btn btn-primary" type="submit">Login</button>
-        <button class="btn" id="js-btnMoveToRegister" type="button">Register now</button>
+        <button class="btn btn-login" type="submit">Login</button>
+        <button class="btn btn-moveToRegs" id="js-btnMoveToRegister" type="button">Register now</button>
         </div>
     </form></div>
 </div>
@@ -37,8 +37,14 @@ function onLoad() {
       switch (response.code)
       {
           case responseCode.auth.email_not_verified:
-              alert("Account not activated! Please check your inbox")
+              alert("Account not activated! Please check your E-mail")
               return;
+          case responseCode.auth.wrong_password:
+              alert("Password is incorrect please check again!")
+              return;
+           case responseCode.auth.user_not_found:
+               alert("This account does not exist,please register first!")
+               return;   
         case responseCode.auth.login_success:
             setScreen(chatScreen);
             return;

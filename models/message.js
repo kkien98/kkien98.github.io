@@ -39,6 +39,7 @@ function saveMessage(message)
   
   .then(function(){
       console.log("Message sent!")
+      console.log(user.authedUser.email)
   })
   .catch(function(err){
       console.error("Failed to send message: ",err);
