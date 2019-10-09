@@ -84,6 +84,31 @@ html,
 
 .vertical-scroll{
     overflow-y: auto;
+    background: #00000054;
+}
+.scrollbar{
+    margin-left: 5px;
+	overflow-y: scroll;
+}
+.force-overflow
+{
+	min-height: 500px;
+}
+.style-scroll::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: rgba(245, 245, 245, 0.568);
+}
+
+.style-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.07, rgb(51, 61, 95)),
+									   color-stop(0.75, rgb(99, 166, 248)),
+									   color-stop(0.90, rgb(28,58,148)));
 }
 #js-userInput{
     background: rgba(255, 255, 255, 0.418);
@@ -96,15 +121,22 @@ html,
     /* background: #9b9b9b85; */
 }
 #js-chatFrame{
-    background: #9b9b9b85;
-    
+    background: #9b9b9b85;  
+}
+#js-userInput{
+    width: 96%;
 }
 .js-listUserFrame{
     background: #9b9b9b85;
 }
+
+#right-side{
+   position: relative;
+}
 #left-side{
-    width: 50px;
+    width: 250px;
     background: #9b9b9b85;
+    position: relative;
 }
 .chat-con-item{
     height: 50px;
@@ -121,9 +153,10 @@ html,
     cursor: pointer;
     font-style: normal;
 }
+/* width */
 
 .chat-con-item.active{
-    background:rgb(199, 56, 255);
+    background:rgb(129, 128, 240);
     color:rgb(127, 252, 214);
 }
 
@@ -176,6 +209,9 @@ html,
     transition:  all .2s ease-in-out;
     
 }
+.btn-sendMess{
+    width: 80px;
+}
 
 .reg-input{
     width: 95%;
@@ -194,7 +230,6 @@ input[type="text"],input[type="email"],input[type="password"]{
     
 
 } 
-
 
 
 /* input[type="text"]:focus{
@@ -222,8 +257,12 @@ input[type="text"],input[type="email"],input[type="password"]{
 }
 } */
 
-.bg-gray{
-    background:#ececec;
+.white-bg{
+    background:#ececec91;
+     margin: 10px;
+     padding-left: 10px;
+     border: 4px solid #2e0606;
+     border-radius: 5px;
 }
 
 .border-right{

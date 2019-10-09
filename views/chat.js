@@ -7,29 +7,29 @@ import user from "../models/user.js"
 let lastMsgEmail="";
 const ui = `
 <div class="flex-container height-100 background ">
-<div id="left-side" class="element grow-1 border-right  vertical-scroll">
+<div id="left-side" class="element border-right scrollbar style-scroll ">
 <div id="js-conversationHeader" class="js-conversationHeader">
 </div>
-<div id="js-conFrame" class="height-100 element">
+<div id="js-conFrame" class="height-100 ">
 
 </div>
 </div>
 <div id="right-side" class="flex-container flex-column grow-3">
-<div class="element">
-<h4 class="bg-gray">Title</h4>
+<div class="js-conName">
+<h4 class="white-bg">ĐM ĐẠT TRẠI</h4>
 </div>
 <div class="flex-container element grow-1 vertical-scroll">
 <div class="element grow-3 flex-container flex-column">
-<div class="element grow-1 vertical-scroll" id="js-chatFrame">
+<div class="element grow-1 scrollbar style-scroll " id="js-chatFrame">
 </div>
 <div class="element">
 <form id="js-formChat">
 <div class="flex-container">
 <div class="grow-1">
-<input type="text" class="width-100" id="js-userInput">
+<input type="text"  id="js-userInput">
 </div>
 <div>
-<button>Send</button>
+<button class="btn btn-sendMess">SEND</button>
 </div>
 </div>
 </form>
