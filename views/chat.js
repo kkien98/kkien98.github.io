@@ -16,7 +16,7 @@ const ui = `
 </div>
 <div id="right-side" class="flex-container flex-column grow-3">
 <div class="js-conName">
-<h4 class="white-bg">ĐM ĐẠT TRẠI</h4>
+<h4 class="white-bg">Hello ${user.authedUser.email} &#128522</h4>
 </div>
 <div class="flex-container element grow-1 vertical-scroll">
 <div class="element grow-3 flex-container flex-column">
@@ -40,7 +40,7 @@ const ui = `
 </div>
 <div>
 <form id="js-formAddUser">
-<input id="js-inputAddUser" type="text" placeholder="Type email here ...">
+<input id="js-inputAddUser" type="text" placeholder="Add more people here...">
 </form>
 </div>
 </div>
@@ -170,7 +170,7 @@ function addCon(conversation) {
     ${conversation.name}
  </div>`;
     const conFrame = document.getElementById("js-conFrame");
-    conFrame.insertAdjacentHTML("beforeend", con);
+    conFrame.insertAdjacentHTML("afterbegin",con)
 }
 function updateUserList(listUser) {
 
