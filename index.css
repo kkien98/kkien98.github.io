@@ -13,6 +13,7 @@ html,
     
 
 }
+
 .js-conversationHeader{
     background: #aca0a07e;
     border: 1px solid black
@@ -128,6 +129,7 @@ html,
 }
 .js-listUserFrame{
     background: #9b9b9b85;
+    text-align: center;
 }
 
 #right-side{
@@ -177,6 +179,10 @@ html,
 
 .input-group label::before{
     content: "(*)"
+}
+
+.inputAddUser{
+    width: 90%;
 }
 
 .btn{

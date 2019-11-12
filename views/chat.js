@@ -40,7 +40,10 @@ const ui = `
 </div>
 <div>
 <form id="js-formAddUser">
-<input id="js-inputAddUser" type="text" placeholder="Add more people here...">
+<h5 class="white-bg">Want to talk to someone? Add them here:</h4>
+<div >
+<input class="inputAddUser"  id="js-inputAddUser" type="text" placeholder="Email only..." >
+</div>
 </form>
 </div>
 </div>

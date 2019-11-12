@@ -4,8 +4,9 @@ import authController from '../controlers/authController.js';
 import {responseCode} from '../controlers/response.js'
 import chatScreen from '../views/chat.js'
 const form =`
+<div class="main-container width-100 height-100">
 <div id="login-screen" class="width-100 height-100">
-<div class="card card-sm">
+<div class="card card-sm login-card">
 <form id="js-loginForm">
 <h3 class="align-center">Just Chat</h3>
         <div class="input-group ">
@@ -20,8 +21,14 @@ const form =`
         <button class="btn btn-login" type="submit">Login</button>
         <button class="btn btn-moveToRegs" id="js-btnMoveToRegister" type="button">Register now</button>
         </div>
-    </form></div>
+    </form>
+    </div> 
 </div>
+    <a class="js-github" href="https://github.com/kkien98/kkien98.github.io">Project Source</a>
+</div>
+
+
+
 
 `
 function onLoad() {   
