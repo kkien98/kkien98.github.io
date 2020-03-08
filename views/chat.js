@@ -9,6 +9,7 @@ const ui = `
 <div class="flex-container height-100 background ">
 <div id="left-side" class="element border-right scrollbar style-scroll ">
 <div id="js-conversationHeader" class="js-conversationHeader">
+
 </div>
 <div id="js-conFrame" class="height-100 ">
 
@@ -116,7 +117,7 @@ function addBtnShow() {
 function closeFormCreate(){
     const conHeader = document.getElementById("js-conversationHeader");
     conHeader.innerHTML= `
-    <button class="btn-createdCon width-100" id="js-btnShow" class="width-100">Create new conversation</button>
+    <button class="btn-createdCon width-100" id="js-btnShow">Create new conversation</button>
     `
 }
 
@@ -131,7 +132,9 @@ function addFormCreate() {
         // xử lý submit form add conversation ở đây
         const name = formCreate["js-conName"].value;
         const email = formCreate["js-conEmail"].value;
+        if(name.length > 0) {
         conversationController.createConversation(name, email);
+        }
         addBtnShow();
     })
 
